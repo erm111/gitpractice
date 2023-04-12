@@ -10,20 +10,23 @@
         #bulb {
             background-color: grey;
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
             margin: 20px auto;
             box-shadow: 0 0 50px 10px #fff;
             transition: background-color 0.5s;
         }
         
         #switch {
-            width: 50px;
-            height: 20px;
-            border-radius: 10px;
+            width: 100px;
+            height: 40px;
+            border-radius: 20px;
             background-color: #ccc;
             margin: 10px auto;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: background-color 0.5s;
         }
         
@@ -35,7 +38,7 @@
 
 <body>
     <div id="bulb"></div>
-    <div id="switch"></div>
+    <div id="switch">OFF</div>
     <script>
         let bulb = document.getElementById("bulb");
         let switchButton = document.getElementById("switch");
@@ -44,9 +47,11 @@
         switchButton.onclick = function() {
             if (isOn) {
                 bulb.style.backgroundColor = "grey";
+                switchButton.innerHTML = "ON";
                 switchButton.classList.remove("on");
             } else {
                 bulb.style.backgroundColor = "yellow";
+                switchButton.innerHTML = "OFF";
                 switchButton.classList.add("on");
             }
             isOn = !isOn;
