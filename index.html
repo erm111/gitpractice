@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Bulb</title>
+    <style>
+        #bulb {
+            background-color: grey;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            box-shadow: 0 0 50px 10px #fff;
+            transition: background-color 0.5s;
+        }
+        
+        #switch {
+            width: 50px;
+            height: 20px;
+            border-radius: 10px;
+            background-color: #ccc;
+            margin: 10px auto;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+        
+        #switch.on {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bulb"></div>
+    <div id="switch"></div>
+    <script>
+        let bulb = document.getElementById("bulb");
+        let switchButton = document.getElementById("switch");
+        let isOn = false;
+
+        switchButton.onclick = function() {
+            if (isOn) {
+                bulb.style.backgroundColor = "grey";
+                switchButton.classList.remove("on");
+            } else {
+                bulb.style.backgroundColor = "yellow";
+                switchButton.classList.add("on");
+            }
+            isOn = !isOn;
+        };
+    </script>
+</body>
+
+</html>
